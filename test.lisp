@@ -21,5 +21,6 @@
     (nth-value 2 (uiop:run-program exe :ignore-error-status t))))
 
 (test compile-test
-  (is (= (try "0") 0))
-  (is (= (try "43") 43)))
+  (is (= 0 (try "0") 0))
+  (is (= 42 (try "42")))
+  (is (= 21 (try "5+20-4"))))
